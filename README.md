@@ -7,9 +7,18 @@ Esta es una aplicación de gestión de biblioteca desarrollada en Python utiliza
 - Python 3.x
 - Tkinter (suele venir preinstalado con Python)
 
-## Configuración del Entorno (no es necesario por ahora)
+## Configuración del Entorno
 
-### 1. Crear un Entorno Virtual
+### 1. Clonar el Repositorio
+
+Abre una terminal y ejecuta el siguiente comando para clonar el repositorio:
+
+```sh
+git clone https://github.com/SGNinja/ProyectoPythonTecno3F.git
+cd ProyectoPythonTecno3F
+```
+
+### 2. Crear un Entorno Virtual
 
 Abre una terminal y ejecuta los siguientes comandos:
 
@@ -17,7 +26,7 @@ Abre una terminal y ejecuta los siguientes comandos:
 python3 -m venv venv
 ```
 
-### 2. Activar el Entorno Virtual
+### 3. Activar el Entorno Virtual
 
 - En Windows:
 
@@ -31,14 +40,6 @@ venv\Scripts\activate
 source venv/bin/activate
 ```
 
-### 3. Instalar Dependencias
-
-Ejecuta el siguiente comando para instalar las dependencias:
-
-```sh
-pip install -r requirements.txt
-```
-
 ## Crear la Base de Datos
 
 ### Crear la Base de Datos Vacía
@@ -49,7 +50,7 @@ Ejecuta el siguiente script para crear la base de datos y las tablas necesarias:
 python3 crear_db.py
 ```
 
-### Crear la Base de Datos con Datos de Ejemplo para Pruebas (Opcional)
+### Crear la Base de Datos con Datos de Ejemplo
 
 Ejecuta el siguiente script para crear la base de datos con datos de ejemplo:
 
@@ -71,11 +72,13 @@ python3 app.py
 /
 ├── app.py
 ├── database/
+│   ├── __init__.py
 │   ├── database.py
 │   ├── autor.py
 │   ├── categoria.py
 │   └── libro.py
 ├── gui/
+│   ├── __init__.py
 │   ├── app.py
 │   ├── libros_tab.py
 │   ├── autores_tab.py
@@ -99,8 +102,8 @@ python3 app.py
 - **gui/categorias_tab.py**: Funcionalidad de la pestaña de categorías.
 - **utils/theme_manager.py**: Define una clase para manejar el cambio de temas (claro y oscuro).
 - **crear_db.py**: Script para crear la base de datos vacía.
-- **crear_db_con_ejemplos.py**: Script para crear la base de datos con datos de ejemplo para prueba.
-- **requeriments.txt**: Dependencias necesarias (por ahora esta vacio).
+- **crear_db_con_ejemplos.py**: Script para crear la base de datos con datos de ejemplo.
+- **requeriments.txt**: Dependencias necesarias (por ahora está vacío).
 - **README.md**: Este archivo.
 
 ## Funcionalidades
