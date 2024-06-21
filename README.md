@@ -1,7 +1,8 @@
 # Tecno 3F
+
 ## Proyecto Final
-Este trabajo es parte del curso de Python intermedio de Tecno3F, dictado por Gabriel Sebastian Roman.
-Alumno: Sebastian Gil
+Este trabajo es parte del curso de Python intermedio de Tecno3F, dictado por **Gabriel Sebastian Roman**.
+**Alumno:** Sebastian Gil
 
 # Gestión de Biblioteca
 
