@@ -7,7 +7,7 @@ Esta es una aplicación de gestión de biblioteca desarrollada en Python utiliza
 - Python 3.x
 - Tkinter (suele venir preinstalado con Python)
 
-## Configuración del Entorno
+## Configuración del Entorno (no es necesario por ahora)
 
 ### 1. Crear un Entorno Virtual
 
@@ -29,6 +29,14 @@ venv\Scripts\activate
 
 ```sh
 source venv/bin/activate
+```
+
+### 3. Instalar Dependencias
+
+Ejecuta el siguiente comando para instalar las dependencias:
+
+```sh
+pip install -r requirements.txt
 ```
 
 ## Crear la Base de Datos
@@ -76,6 +84,7 @@ python3 app.py
 │   └── theme_manager.py
 ├── crear_db.py
 ├── crear_db_con_ejemplos.py
+├── requeriments.txt
 └── README.md
 ```
 
@@ -91,6 +100,7 @@ python3 app.py
 - **utils/theme_manager.py**: Define una clase para manejar el cambio de temas (claro y oscuro).
 - **crear_db.py**: Script para crear la base de datos vacía.
 - **crear_db_con_ejemplos.py**: Script para crear la base de datos con datos de ejemplo para prueba.
+- **requeriments.txt**: Dependencias necesarias (por ahora esta vacio).
 - **README.md**: Este archivo.
 
 ## Funcionalidades
