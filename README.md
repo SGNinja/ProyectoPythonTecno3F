@@ -1,3 +1,8 @@
+# Tecno 3F
+## Proyecto Final
+Este trabajo es parte del curso de Python intermedio de Tecno3F, dictado por Gabriel Sebastian Roman.
+Alumno: Sebastian Gil
+
 # Gestión de Biblioteca
 
 Esta es una aplicación de gestión de biblioteca desarrollada en Python utilizando Tkinter para la interfaz gráfica y SQLite para la base de datos.
