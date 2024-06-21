@@ -47,6 +47,10 @@ class LibrosTab:
         self.frame.grid_rowconfigure(5, weight=1)
         self.frame.grid_columnconfigure(1, weight=1)
 
+        # Etiqueta para mostrar el total de libros
+        self.total_libros_label = tk.Label(self.frame, text="Total de Libros Registrados: 0", anchor='e')
+        self.total_libros_label.grid(row=6, column=1, sticky='e', padx=10, pady=10)
+
         self.actualizar_lista_libros()
 
     def agregar_libro(self):
@@ -84,6 +88,11 @@ class LibrosTab:
         for libro in libros:
             self.libros_tree.insert("", "end", values=libro)
         self.autoajustar_columnas(self.libros_tree)
+        self.actualizar_total_libros()
+
+    def actualizar_total_libros(self):
+        total_libros = len(self.libros_tree.get_children())
+        self.total_libros_label.config(text=f"Total de Libros Registrados: {total_libros}")
 
     def actualizar_autores_combobox(self):
         autores = self.db.fetch_all('SELECT * FROM autores')

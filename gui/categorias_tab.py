@@ -30,6 +30,10 @@ class CategoriasTab:
         self.frame.grid_rowconfigure(2, weight=1)
         self.frame.grid_columnconfigure(1, weight=1)
 
+        # Etiqueta para mostrar el total de categorías
+        self.total_categorias_label = tk.Label(self.frame, text="Total de Categorías Registradas: 0", anchor='e')
+        self.total_categorias_label.grid(row=3, column=1, sticky='e', padx=10, pady=10)
+
         self.actualizar_lista_categorias()
 
     def agregar_categoria(self):
@@ -51,6 +55,11 @@ class CategoriasTab:
         for categoria in categorias:
             self.categorias_tree.insert("", "end", values=categoria)
         self.autoajustar_columnas(self.categorias_tree)
+        self.actualizar_total_categorias()
+
+    def actualizar_total_categorias(self):
+        total_categorias = len(self.categorias_tree.get_children())
+        self.total_categorias_label.config(text=f"Total de Categorías Registradas: {total_categorias}")
 
     def autoajustar_columnas(self, treeview):
         for col in treeview["columns"]:

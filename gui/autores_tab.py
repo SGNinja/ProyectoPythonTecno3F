@@ -40,6 +40,10 @@ class AutoresTab:
         self.frame.grid_rowconfigure(4, weight=1)
         self.frame.grid_columnconfigure(1, weight=1)
 
+        # Etiqueta para mostrar el total de autores
+        self.total_autores_label = tk.Label(self.frame, text="Total de Autores Registrados: 0", anchor='e')
+        self.total_autores_label.grid(row=5, column=1, sticky='e', padx=10, pady=10)
+
         self.actualizar_lista_autores()
 
     def agregar_autor(self):
@@ -63,6 +67,11 @@ class AutoresTab:
         for autor in autores:
             self.autores_tree.insert("", "end", values=autor)
         self.autoajustar_columnas(self.autores_tree)
+        self.actualizar_total_autores()
+
+    def actualizar_total_autores(self):
+        total_autores = len(self.autores_tree.get_children())
+        self.total_autores_label.config(text=f"Total de Autores Registrados: {total_autores}")
 
     def autoajustar_columnas(self, treeview):
         for col in treeview["columns"]:
