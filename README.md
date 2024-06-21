@@ -60,7 +60,7 @@ python3 app.py
 ## Estructura del Proyecto
 
 ```sh
-biblioteca/
+/
 ├── app.py
 ├── database/
 │   ├── __init__.py
