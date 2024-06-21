@@ -21,8 +21,14 @@ class Libro:
                        WHEN NULLIF(autores.apellido, '') IS NOT NULL THEN autores.apellido
                        ELSE 'Dato Desconocido'
                    END AS autor, 
-                   categorias.nombre AS categoria, 
-                   libros.fecha_publicacion
+                   CASE 
+                       WHEN NULLIF(categorias.nombre, '') IS NOT NULL THEN categorias.nombre
+                       ELSE 'Dato Desconocido'
+                   END AS categoria, 
+                   CASE 
+                       WHEN NULLIF(libros.fecha_publicacion, '') IS NOT NULL THEN libros.fecha_publicacion
+                       ELSE 'Dato Desconocido'
+                   END AS fecha_publicacion
             FROM libros
             JOIN autores ON libros.autor_id = autores.id
             JOIN categorias ON libros.categoria_id = categorias.id
