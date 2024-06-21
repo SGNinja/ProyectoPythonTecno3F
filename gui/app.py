@@ -3,11 +3,13 @@ from tkinter import ttk, messagebox
 from gui.libros_tab import LibrosTab
 from gui.autores_tab import AutoresTab
 from gui.categorias_tab import CategoriasTab
+from utils.theme_manager import ThemeManager  # Importar ThemeManager
 
 class App:
     def __init__(self, root, db):
         self.root = root
         self.db = db
+        self.theme_manager = ThemeManager(root)  # Crear una instancia de ThemeManager
         self.root.title("Gestión de Biblioteca")
         self.root.geometry("800x600")  # Ajustar el tamaño de la ventana
         self.create_widgets()
@@ -21,6 +23,12 @@ class App:
         archivo_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label="Archivo", menu=archivo_menu)
         archivo_menu.add_command(label="Salir", command=self.root.quit)
+
+        # Menú Tema
+        tema_menu = tk.Menu(menubar, tearoff=0)
+        menubar.add_cascade(label="Tema", menu=tema_menu)
+        tema_menu.add_command(label="Claro", command=self.theme_manager.set_claro)
+        tema_menu.add_command(label="Oscuro", command=self.theme_manager.set_oscuro)
 
         # Menú Ayuda
         ayuda_menu = tk.Menu(menubar, tearoff=0)

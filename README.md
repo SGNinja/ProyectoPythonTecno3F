@@ -41,7 +41,7 @@ Ejecuta el siguiente script para crear la base de datos y las tablas necesarias:
 python3 crear_db.py
 ```
 
-### Crear la Base de Datos con Datos de Ejemplo
+### Crear la Base de Datos con Datos de Ejemplo para Pruebas (Opcional)
 
 Ejecuta el siguiente script para crear la base de datos con datos de ejemplo:
 
@@ -63,21 +63,20 @@ python3 app.py
 /
 ├── app.py
 ├── database/
-│   ├── __init__.py
 │   ├── database.py
 │   ├── autor.py
 │   ├── categoria.py
 │   └── libro.py
 ├── gui/
-│   ├── __init__.py
 │   ├── app.py
 │   ├── libros_tab.py
 │   ├── autores_tab.py
 │   └── categorias_tab.py
-└── crear_db.py
-└── crear_db_con_ejemplos.py
+├── utils/
+│   └── theme_manager.py
+├── crear_db.py
+├── crear_db_con_ejemplos.py
 └── README.md
-└── requeriments.txt
 ```
 
 - **app.py**: Este archivo inicializa la base de datos, crea la ventana principal de Tkinter y lanza la aplicación.
@@ -89,10 +88,10 @@ python3 app.py
 - **gui/libros_tab.py**: Funcionalidad de la pestaña de libros.
 - **gui/autores_tab.py**: Funcionalidad de la pestaña de autores.
 - **gui/categorias_tab.py**: Funcionalidad de la pestaña de categorías.
+- **utils/theme_manager.py**: Define una clase para manejar el cambio de temas (claro y oscuro).
 - **crear_db.py**: Script para crear la base de datos vacía.
-- **crear_db_con_ejemplos.py**: Script para crear la base de datos con datos de ejemplo.
+- **crear_db_con_ejemplos.py**: Script para crear la base de datos con datos de ejemplo para prueba.
 - **README.md**: Este archivo.
-- **requeriments.txt**: Dependencias necesarias (Por ahora esta vacio).
 
 ## Funcionalidades
 
@@ -105,6 +104,7 @@ python3 app.py
 - **Agregar Categoría**: Permite agregar una nueva categoría a la base de datos.
 - **Eliminar Categoría**: Permite eliminar una categoría de la base de datos.
 - **Ver Categorías**: Muestra una lista de todas las categorías en la base de datos.
+- **Cambiar Tema**: Permite cambiar entre un tema claro y un tema oscuro para la interfaz gráfica.
 
 ## Mejoras Futuras
 
