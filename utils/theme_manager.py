@@ -21,8 +21,10 @@ class ThemeManager:
             style.configure('TLabel', background='#2e2e2e', foreground='#ffffff')
             style.configure('TButton', background='#3e3e3e', foreground='#ffffff')
             style.configure('TNotebook', background='#2e2e2e', foreground='#ffffff')
-            style.configure('TNotebook.Tab', background='#3e3e3e', foreground='#ffffff')
+            style.configure('TNotebook.Tab', background='#2e2e2e', foreground='#ffffff')
             style.configure('Treeview', background='#2e2e2e', foreground='#ffffff', fieldbackground='#2e2e2e')
+            style.configure('Treeview.Heading', background='#3e3e3e', foreground='#ffffff')
+            style.configure('TCombobox', fieldbackground='#2e2e2e', background='#3e3e3e', foreground='#ffffff')
             style.map('Treeview', background=[('selected', '#3e3e3e')], foreground=[('selected', '#ffffff')])
         else:
             style.theme_use('default')
@@ -32,4 +34,6 @@ class ThemeManager:
             style.configure('TNotebook', background='#f0f0f0', foreground='#000000')
             style.configure('TNotebook.Tab', background='#e0e0e0', foreground='#000000')
             style.configure('Treeview', background='#ffffff', foreground='#000000', fieldbackground='#ffffff')
+            style.configure('Treeview.Heading', background='#e0e0e0', foreground='#000000')
+            style.configure('TCombobox', fieldbackground='#ffffff', background='#ffffff', foreground='#000000')
             style.map('Treeview', background=[('selected', '#e0e0e0')], foreground=[('selected', '#000000')])
