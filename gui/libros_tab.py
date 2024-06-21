@@ -51,11 +51,20 @@ class LibrosTab:
 
     def agregar_libro(self):
         titulo = self.titulo_entry.get()
-        autor_nombre = self.autor_combobox.get()
+        autor_nombre_completo = self.autor_combobox.get()
         categoria_nombre = self.categoria_combobox.get()
         fecha_publicacion = self.fecha_publicacion_entry.get()
 
-        autor_id = self.db.get_or_create_autor(autor_nombre, "", "")
+        # Separar el nombre completo en nombre y apellido
+        autor_nombre, autor_apellido = autor_nombre_completo.split(' ', 1) if ' ' in autor_nombre_completo else (autor_nombre_completo, '')
+
+        # Buscar el autor existente en la base de datos
+        autor_id = self.db.fetch_one('SELECT id FROM autores WHERE nombre = ? AND apellido = ?', (autor_nombre, autor_apellido))
+        if autor_id:
+            autor_id = autor_id[0]
+        else:
+            autor_id = self.db.get_or_create_autor(autor_nombre, autor_apellido, "")
+
         categoria_id = self.db.get_or_create_categoria(categoria_nombre)
 
         self.libro.agregar(titulo, autor_id, categoria_id, fecha_publicacion)
