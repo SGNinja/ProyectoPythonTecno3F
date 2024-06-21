@@ -14,7 +14,15 @@ class Libro:
 
     def ver_todos(self):
         return self.db.fetch_all('''
-            SELECT libros.id, libros.titulo, autores.apellido || ', ' || autores.nombre AS autor, categorias.nombre AS categoria, libros.fecha_publicacion
+            SELECT libros.id, libros.titulo, 
+                   CASE 
+                       WHEN NULLIF(autores.nombre, '') IS NOT NULL AND NULLIF(autores.apellido, '') IS NOT NULL THEN autores.apellido || ', ' || autores.nombre
+                       WHEN NULLIF(autores.nombre, '') IS NOT NULL THEN autores.nombre
+                       WHEN NULLIF(autores.apellido, '') IS NOT NULL THEN autores.apellido
+                       ELSE 'Dato Desconocido'
+                   END AS autor, 
+                   categorias.nombre AS categoria, 
+                   libros.fecha_publicacion
             FROM libros
             JOIN autores ON libros.autor_id = autores.id
             JOIN categorias ON libros.categoria_id = categorias.id
