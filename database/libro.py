@@ -30,8 +30,8 @@ class Libro:
                        ELSE 'Dato Desconocido'
                    END AS fecha_publicacion
             FROM libros
-            JOIN autores ON libros.autor_id = autores.id
-            JOIN categorias ON libros.categoria_id = categorias.id
+            LEFT JOIN autores ON libros.autor_id = autores.id
+            LEFT JOIN categorias ON libros.categoria_id = categorias.id
         ''')
 
     def eliminar(self, id):

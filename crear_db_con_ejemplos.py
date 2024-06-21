@@ -83,7 +83,11 @@ def crear_db():
         ('El gran Gatsby', autores_dict['F. Scott Fitzgerald'], categorias_dict['Clásico'], '1925-04-10'),
         ('El viejo y el mar', autores_dict['Ernest Hemingway'], categorias_dict['Literatura'], '1952-09-01'),
         ('Guerra y paz', autores_dict['Leo Tolstoy'], categorias_dict['Clásico'], '1869-01-01'),
-        ('La Ilíada', autores_dict['Homer'], categorias_dict['Épico'], '800-01-01')
+        ('La Ilíada', autores_dict['Homer'], categorias_dict['Épico'], '800-01-01'),
+        # Libros adicionales para probar funcionalidad 'Dato Desconocido'
+        ('Libro sin autor', None, categorias_dict['Ficción'], '2023-01-01'),
+        ('Libro sin fecha', autores_dict['Jane Austen'], categorias_dict['Clásico'], None),
+        ('Libro sin categoría', autores_dict['Mark Twain'], None, '2023-01-01')
     ]
     cursor.executemany('''
         INSERT INTO libros (titulo, autor_id, categoria_id, fecha_publicacion)
