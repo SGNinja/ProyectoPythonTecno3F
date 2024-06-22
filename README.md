@@ -18,7 +18,7 @@ git clone https://github.com/SGNinja/ProyectoPythonTecno3F.git
 cd ProyectoPythonTecno3F
 ```
 
-### 2. Crear un Entorno Virtual
+### 2. Crear un Entorno Virtual (*)
 
 Abre una terminal y ejecuta los siguientes comandos:
 
@@ -26,7 +26,7 @@ Abre una terminal y ejecuta los siguientes comandos:
 python3 -m venv venv
 ```
 
-### 3. Activar el Entorno Virtual
+### 3. Activar el Entorno Virtual (*)
 
 - En Windows:
 
@@ -39,6 +39,15 @@ venv\Scripts\activate
 ```sh
 source venv/bin/activate
 ```
+### 4. Instalar Dependencias (*)
+
+Ejecuta el siguiente comando para instalar las dependencias requeridas:
+
+```sh
+pip install -r requirements.txt
+```
+
+### (*)NOTA: Los pasos 2, 3 y 4 no son necesarios para esta versión de la aplicación, quizás en futuras versiones.
 
 ## Crear la Base de Datos
 
@@ -50,7 +59,7 @@ Ejecuta el siguiente script para crear la base de datos y las tablas necesarias:
 python3 crear_db.py
 ```
 
-### Crear la Base de Datos con Datos de Ejemplo
+### Crear la Base de Datos con Datos de Ejemplo (Opcional)
 
 Ejecuta el siguiente script para crear la base de datos con datos de ejemplo:
 
