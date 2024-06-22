@@ -81,13 +81,11 @@ python3 app.py
 /
 ├── app.py
 ├── database/
-│   ├── __init__.py
 │   ├── database.py
 │   ├── autor.py
 │   ├── categoria.py
 │   └── libro.py
 ├── gui/
-│   ├── __init__.py
 │   ├── app.py
 │   ├── libros_tab.py
 │   ├── autores_tab.py
