@@ -47,7 +47,7 @@ Ejecuta el siguiente comando para instalar las dependencias requeridas:
 pip install -r requirements.txt
 ```
 
-### (*) **NOTA**: Los pasos 2, 3 y 4 no son necesarios para esta versión de la aplicación, quizás en futuras versiones.
+### (*) NOTA: Los pasos 2, 3 y 4 no son necesarios para esta versión de la aplicación, quizás en futuras versiones.
 
 ## Crear la Base de Datos
 
