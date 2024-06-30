@@ -38,17 +38,23 @@ class App:
         notebook = ttk.Notebook(self.root)
         notebook.pack(expand=1, fill='both')
 
-        # Pestaña para agregar libros
-        self.tab_libros = LibrosTab(notebook, self.db)
-        notebook.add(self.tab_libros.frame, text='Libros')
+        # Manejo de errores en caso de DB vacia
+        try:
+            # Pestaña para agregar libros
+            self.tab_libros = LibrosTab(notebook, self.db)
+            notebook.add(self.tab_libros.frame, text='Libros')
 
-        # Pestaña para agregar autores
-        self.tab_autores = AutoresTab(notebook, self.db)
-        notebook.add(self.tab_autores.frame, text='Autores')
+            # Pestaña para agregar autores
+            self.tab_autores = AutoresTab(notebook, self.db)
+            notebook.add(self.tab_autores.frame, text='Autores')
 
-        # Pestaña para agregar categorías
-        self.tab_categorias = CategoriasTab(notebook, self.db)
-        notebook.add(self.tab_categorias.frame, text='Categorías')
+            # Pestaña para agregar categorías
+            self.tab_categorias = CategoriasTab(notebook, self.db)
+            notebook.add(self.tab_categorias.frame, text='Categorías')
+        except Exception as e:
+            messagebox.showinfo("Base de datos vacía", "La base de datos se encuentra vacía. Por favor, agregue algunos registros.")
+            label = tk.Label(self.root, text="La base de datos está vacía. Use las opciones de menú para agregar registros.")
+            label.pack(pady=20)
 
     def mostrar_about(self):
         messagebox.showinfo("About", "Gestión de Biblioteca\nAutor: Sebastian Gil\nEmpresa: Tecno3F")

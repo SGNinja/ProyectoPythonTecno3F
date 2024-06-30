@@ -106,6 +106,27 @@ class LibrosTab:
 
     def autoajustar_columnas(self, treeview):
         for col in treeview["columns"]:
-            max_width = max(tkFont.Font().measure(treeview.heading(col, 'text')),
-                            max(tkFont.Font().measure(treeview.set(item, col)) for item in treeview.get_children()))
-            treeview.column(col, width=max_width, stretch=True)
+            treeview.heading(col, text=col, command=lambda c=col: self.ordenar_por_columna(treeview, c, False))
+            
+            max_width = tkFont.Font().measure(col.title())
+            
+            for item in treeview.get_children(""):
+                cell_width = tkFont.Font().measure(treeview.set(item, col))
+                if cell_width > max_width:
+                    max_width = cell_width
+            
+            if not treeview.get_children(""):
+                max_width = 100
+            
+            max_width += 10
+            
+            treeview.column(col, width=max_width)
+
+    def ordenar_por_columna(self, treeview, col, reverse):
+        l = [(treeview.set(k, col), k) for k in treeview.get_children('')]
+        l.sort(reverse=reverse)
+
+        for index, (val, k) in enumerate(l):
+            treeview.move(k, '', index)
+
+        treeview.heading(col, command=lambda: self.ordenar_por_columna(treeview, col, not reverse))
